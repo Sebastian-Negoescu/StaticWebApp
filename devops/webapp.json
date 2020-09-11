@@ -1,0 +1,17 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "rgName": {
+            "type": "string",
+            "defaultValue": ""
+        }
+    },
+    "variables": {
+        "resourceIdentifier": "[split(parameters('rgName'), '-')]",
+        "webappName": "[concat(variables('resourceIdentifier')[1], '-', variables('resourceIdentifier')[2])]",
+        "aspName": "[concat(variables('webappName'), '-ASP')]"
+    },
+    "resources": [],
+    "outputs": {}
+}
